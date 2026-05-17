@@ -31,9 +31,9 @@ def build_app_config(project_root: Path) -> AppConfig:
     raw = load_yaml_config(project_root / "config.yaml")
 
     env = {
-        "base_url": os.getenv("LLM_BASE_URL", "https://api.deepseek.com"),
+        "base_url": os.getenv("LLM_BASE_URL", ""),
         "api_key": os.getenv("LLM_API_KEY", ""),
-        "model": os.getenv("LLM_MODEL", "deepseek-chat"),
+        "model": os.getenv("LLM_MODEL", ""),
         "timeout": int(os.getenv("LLM_TIMEOUT", "60")),
         "max_retries": int(os.getenv("LLM_MAX_RETRIES", "2")),
     }

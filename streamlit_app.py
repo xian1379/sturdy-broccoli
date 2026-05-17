@@ -6,20 +6,20 @@ from pathlib import Path
 
 import streamlit as st
 
-from src.deepseek_eval_agent.detector import detect_analysis_mode
-from src.deepseek_eval_agent.loader import load_pasted_workbook, load_uploaded_workbook
-from src.deepseek_eval_agent.pipeline import run_pipeline_from_workbook
+from src.table_analysis_agent.detector import detect_analysis_mode
+from src.table_analysis_agent.loader import load_pasted_workbook, load_uploaded_workbook
+from src.table_analysis_agent.pipeline import run_pipeline_from_workbook
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 ARTIFACT_DIR = PROJECT_ROOT / "artifacts"
 
 
-st.set_page_config(page_title="DeepSeek Eval Agent", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Table Analysis Agent", page_icon=":bar_chart:", layout="wide")
 
 
 def main() -> None:
-    st.title("DeepSeek Eval Agent")
+    st.title("Table Analysis Agent")
     st.caption("上传或粘贴结构化表格，自动识别主题并生成 Markdown / Word 分析报告。")
 
     with st.sidebar:
@@ -35,7 +35,7 @@ def main() -> None:
 
         st.subheader("API 配置")
         api_key_input = st.text_input(
-            "DeepSeek API Key",
+            "API Key",
             type="password",
             value="",
             help="仅本次会话使用。留空时继续使用 .env 或系统环境变量中的 LLM_API_KEY。",

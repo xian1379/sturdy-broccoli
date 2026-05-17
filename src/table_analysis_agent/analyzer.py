@@ -60,6 +60,10 @@ def _call_llm(
 ) -> AnalysisResult:
     if not config.env.get("api_key"):
         return fallback_factory("No API key configured. Generated statistics-only report.")
+    if not config.env.get("base_url"):
+        return fallback_factory("No LLM base URL configured. Generated statistics-only report.")
+    if not config.env.get("model"):
+        return fallback_factory("No LLM model configured. Generated statistics-only report.")
 
     url = f"{config.env['base_url'].rstrip('/')}/chat/completions"
     headers = {

@@ -7,9 +7,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.deepseek_eval_agent.detector import detect_analysis_mode, detect_table_theme
-from src.deepseek_eval_agent.loader import load_pasted_table, load_workbook_file
-from src.deepseek_eval_agent.pipeline import run_pipeline_from_path
+from src.table_analysis_agent.detector import detect_analysis_mode, detect_table_theme
+from src.table_analysis_agent.loader import load_pasted_table, load_workbook_file
+from src.table_analysis_agent.pipeline import run_pipeline_from_path
 
 
 class PipelineSmokeTest(unittest.TestCase):
@@ -19,7 +19,7 @@ class PipelineSmokeTest(unittest.TestCase):
     def test_pasted_table_loader(self) -> None:
         raw_text = (
             "experiment_id\tmodel_name\tdataset\tprompt_version\taccuracy\tf1\tavg_latency_ms\tnotes\n"
-            "exp-001\tdeepseek-chat\tmath_eval\tv1\t0.89\t0.89\t1250\tbaseline"
+            "exp-001\tmodel-alpha\tmath_eval\tv1\t0.89\t0.89\t1250\tbaseline"
         )
         load_result = load_pasted_table(raw_text)
         self.assertEqual(load_result.file_info.file_type, "pasted_text")
