@@ -1,0 +1,15 @@
+report:
+  language: zh
+  max_rows_for_prompt: 200
+  include_recommendation: true
+  output_dir: artifacts
+
+analysis:
+  primary_metric: accuracy
+  latency_metric: avg_latency_ms
+  cost_metric: cost_per_1k
+  stability_metric: error_rate
+  outlier_zscore_threshold: 2.0
+
+llm:
+  temperature: 0.2

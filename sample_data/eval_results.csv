@@ -1,0 +1,7 @@
+experiment_id,model_name,dataset,prompt_version,temperature,accuracy,precision,recall,f1,avg_latency_ms,cost_per_1k,error_rate,notes
+exp-001,deepseek-chat,math_eval,v1,0.2,0.89,0.91,0.87,0.89,1250,0.24,0.01,baseline run
+exp-002,deepseek-chat,math_eval,v2,0.2,0.91,0.92,0.90,0.91,1320,0.24,0.01,prompt optimized
+exp-003,qwen-plus,math_eval,v1,0.2,0.87,0.88,0.86,0.87,980,0.30,0.02,faster but slightly weaker
+exp-004,qwen-plus,math_eval,v2,0.4,0.85,0.86,0.84,0.85,1015,0.30,0.03,higher temperature
+exp-005,glm-4.5,math_eval,v1,0.2,0.90,0.90,0.89,0.90,1430,0.35,0.01,strong but costly
+exp-006,glm-4.5,math_eval,v2,0.2,0.78,0.80,0.77,0.78,2210,0.35,0.09,unstable outlier
